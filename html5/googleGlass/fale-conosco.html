@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <title>Tudo sobre o Google Glass</title>
    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+   <link rel="stylesheet" type="text/css" href="_css/form.css">
+   <script src = "_javascript/funcoes.js"></script>
+   <script>
+       function calc_total(params) {
+           var qtd = parseInt(document.getElementById('cQtd').value);
+           tot = qtd * 1500;
+           document.getElementById('cTot').value = tot
+       }
+   </script>
 </head>
-<script src = "_javascript/funcoes.js"></script>
 <body>
 
     <div id="interface">
@@ -28,41 +36,79 @@
                 </ul>
                 </nav>
         </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Yuri Rodrigues Lombardi</h2>
+                    <h3 class="direita">Atualizado em 08/janeiro/2024</h3>
+                </hgroup>
+                </header>
+                <form method="POST" id="fContado" action="malito:yurielailal@gmail.com" oninput="calc_total();">
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                            <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+                            <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos" ></p>
+                            <p><label for="cEmail">E-mail:</label><input type="email" name="tEmail" id="cEmail" size="20" maxlength="40"></p>
+                            <fieldset id="sexo">
+                                <legend>Sexo:</legend>
+                                    <input type="radio" name="tSexo" id="cMas"><label for="cMas">Masculino</label><br>
+                                    <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label>
+                            </fieldset>
+                            <p><label for="cNasc">Data de Nascimento:<input type="date" name="tNasc" id="cNasc"></label></p>
+                    </fieldset>
 
-<h3>Fale Conosco > Contato</h3>
-<h1>Formulário de Contato</h1>
-<h2>por Gustavo Guanabara</h2>
-<h3 class="direita">Atualizado em 08/dezembro/2023</h3>
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                            <p><label for="cRua">Logradouro:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua,Av,Trav..."></p>
+                            <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" min="0" max="9999"></p>
+                            <p><label for="cEst">Estado:</label>
+                                <select  name="tEst" id="cEst">
+                                    <optgroup label="Região Sudeste">
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="SP" selected>São Paulo</option>
+                                        <option value="MG">Minas Gerais</option>
+                                    </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio grande do Sul</option>
+                                    </optgroup>
+                                </select>
+                            </p>
+                            <p><label for = "cCid">Cidade:</label><input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidade"></p>
+                            <datalist id="cidade">
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova Iguaçu"></option>
+                                <option value="Niterói"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
+                    </fieldset>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                            <p><label for = "cUrg">Grau de Urgência:</label>Mín<input type="range" name="tUrg" id="cUrg" step="2" min="0" max="10">Max<br></p>
+                            <p><label for = "cMsg">Mensagem:</label></p>
+                            <Textarea cols="35" rows="5" name="tMsg" id="cMsg" placeholder="Deixe aqui sua mensagem">
+                            </Textarea>
+                    </fieldset>
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
-
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend><br>
+                            <p><input type="checkbox" name="tPed" id="cPed" checked><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                            <p><label for = "cCor">Cor:</label><input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+                            <p><label for = "cQtd">Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></p>
+                            <p><label for = "cTot">Preço Total: R$</label><input type="text" name="tTot" id="cTot" placeholder="Total à pagar" readonly></p>
+                    </fieldset>
+                    <input type="image" name="tEnviar" src="_imagens/botao-enviar.png">
+                </form>
+            </article>
+        </section>  
 <footer id="rodape">
-    <p>Copyright 2023 &copy; - by Gustavo Guanabara<br>
-        <a href = "http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursoemvideo" target="_blank">Twitter </p>
+    <p>Copyright 2023 &copy; - by Yuri Rodrigues Lombardi<br>
     </footer>
+    </div>
+</body>
+</html>

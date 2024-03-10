@@ -45,6 +45,7 @@ ul#album-fotos li#foto01{
 }
 
 ul#album-fotos li#foto01:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
 
@@ -57,6 +58,7 @@ ul#album-fotos li#foto02{
 }
 
 ul#album-fotos li#foto02:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
 
@@ -68,6 +70,7 @@ ul#album-fotos li#foto03{
 }
 
 ul#album-fotos li#foto03:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
 
@@ -79,6 +82,7 @@ ul#album-fotos li#foto04{
 }
 
 ul#album-fotos li#foto04:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
 
@@ -90,6 +94,7 @@ ul#album-fotos li#foto05{
 }
 
 ul#album-fotos li#foto05:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
 
@@ -101,5 +106,6 @@ ul#album-fotos li#foto06{
 }
 
 ul#album-fotos li#foto06:hover{
+    background-position: 0px 0px;
     background-size: 200px 200px;
 }
