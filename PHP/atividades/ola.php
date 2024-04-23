@@ -5,7 +5,7 @@
 	<title>Primeiro exemplo php</title>
 	<style>
 		h2{
-			color: #802aff		}
+			color: red		}
 	</style>
 </head>
 <body>
