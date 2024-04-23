@@ -1,0 +1,49 @@
+<!--
+    Desafio do Gustavo Guanabara de fazer o "ex9.js" em html na mesma
+    forma do "ex10.html"
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        div{
+            border: 1px solid black;
+            box-shadow: 1px 1px 1px rgb(0, 0, 0);
+            padding: 10px;
+        }
+        div#res{
+            width: auto;
+            margin-top: 20px;
+            height: auto;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Verificando se pessoas são brasileiras</h1>
+        Qual país você mora?<input type="text" name="pais" id="pais">
+        <input type="button" value="Veificar" onclick="nacionalidade()">
+        <div id="res">
+            Esperando...
+        </div>
+    </div>
+    <script>
+        function nacionalidade() {
+            var pais = document.getElementById('pais')
+            console.log(pais)
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>Você vive no <strong>${pais}</strong></p>`
+            if (pais == "Brasil") {
+                res.innerHTML += '<p><strong>Você é brasileiro</strong></p>'
+            }
+            else{
+                res.innerHTML +='<p><strong>Você é estrangeiro</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
